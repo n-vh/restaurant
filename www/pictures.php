@@ -13,34 +13,7 @@
 
 <body class="d-flex flex-column vh-100">
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top bg-white py-3">
-    <div class="container">
-      <img class="mx-2" src="assets/images/logo.svg" height="38" width="56" />
-      <a class="navbar-brand m-0 logo serif" href="index.php">The Pet Plate<b>.</b></a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#hamburger">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse text-center justify-content-end" id="hamburger">
-        <ul class="navbar-nav gap-2 mb-2 mb-md-0 mt-3 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="menu.php">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="pictures.php">Pictures</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="restaurants.php">Restaurants</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-contact" href="contact.php">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include("components/navbar.php"); ?>
 
   <!-- pictures -->
   <section class="container my-5">
