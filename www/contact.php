@@ -112,9 +112,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <?php
           if ($successful) {
-            echo "<div class='alert alert-success' role='alert'>Message sent!<br> We will get back to you as soon as possible.</div>";
-          }
-          ?>
+            echo <<<HTML
+              <div class='alert alert-success' role='alert'>
+                Message sent!<br> 
+                We will get back to you as soon as possible.
+              </div>
+            HTML;
+          } ?>
         </form>
       </section>
     </div>
