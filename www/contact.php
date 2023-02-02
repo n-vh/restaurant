@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </section>
 
   <!-- footer -->
-  <?php include("footer.php"); ?>
+  <?php include("components/footer.php"); ?>
 </body>
 
 </html>

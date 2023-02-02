@@ -131,7 +131,7 @@
   </section>
 
   <!-- footer -->
-  <?php include("footer.php"); ?>
+  <?php include("components/footer.php"); ?>
 
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDHu_t8VjfZ8JUWdw2QPEV1rQrECGF_os&callback=initMap&v=weekly"
