@@ -1,3 +1,11 @@
+<?php
+include("includes/database.php");
+include("includes/query.php");
+
+$request = get_query("http://localhost/api/pictures/get.php", array());
+$pictures = json_decode($request, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,74 +31,30 @@
       </div>
       <div id="carousel" class="col-12 col-lg-10 carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row g-2 justify-content-center">
-              <div class="col-10 col-md-8">
-                <img class="w-100" src="assets/images/pictures-1.jpg" />
-              </div>
-              <div class="col-10 col-md-4">
-                <div class="row g-2">
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-3.jpg" />
-                  </div>
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-6.jpg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row g-2 justify-content-center">
-              <div class="col-10 col-md-8">
-                <img class="w-100" src="assets/images/pictures-12.jpg" />
-              </div>
-              <div class="col-10 col-md-4">
-                <div class="row g-2">
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-4.jpg" />
-                  </div>
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-8.jpg" />
+          <?php
+            for ($i = 0; $i < count($pictures); $i += 3) {
+              $active = $i === 0 ? "active" : "";
+              echo <<<HTML
+                <div class="carousel-item $active">
+                  <div class="row g-2 justify-content-center">
+                    <div class="col-10 col-md-8">
+                      <img class="w-100" src="{$pictures[$i]['url']}" />
+                    </div>
+                    <div class="col-10 col-md-4">
+                      <div class="row g-2">
+                        <div class="col-6 col-md-12">
+                          <img class="w-100" src="{$pictures[$i + 1]['url']}" />
+                        </div>
+                        <div class="col-6 col-md-12">
+                          <img class="w-100" src="{$pictures[$i + 2]['url']}" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row g-2 justify-content-center">
-              <div class="col-10 col-md-8">
-                <img class="w-100" src="assets/images/pictures-13.jpg" />
-              </div>
-              <div class="col-10 col-md-4">
-                <div class="row g-2">
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-5.jpg" />
-                  </div>
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-10.jpg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row g-2 justify-content-center">
-              <div class="col-10 col-md-8">
-                <img class="w-100" src="assets/images/pictures-7.jpg" />
-              </div>
-              <div class="col-10 col-md-4">
-                <div class="row g-2">
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-9.jpg" />
-                  </div>
-                  <div class="col-6 col-md-12">
-                    <img class="w-100" src="assets/images/pictures-11.jpg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+              HTML;
+            }
+          ?>
         </div>
       </div>
       <div class="pagination justify-content-center mb-5">
@@ -99,26 +63,20 @@
             Previous
           </button>
         </li>
-        <li class="page-item">
-          <button class="page-link" data-bs-target="#carousel" data-bs-slide-to="0">
-            1
-          </button>
-        </li>
-        <li class="page-item">
-          <button class="page-link" data-bs-target="#carousel" data-bs-slide-to="1">
-            2
-          </button>
-        </li>
-        <li class="page-item">
-          <button class="page-link" data-bs-target="#carousel" data-bs-slide-to="2">
-            3
-          </button>
-        </li>
-        <li class="page-item">
-          <button class="page-link" data-bs-target="#carousel" data-bs-slide-to="3">
-            4
-          </button>
-        </li>
+        <?php
+            $page = 0;
+            for ($i = 0; $i < count($pictures); $i += 3) {
+              $number = $page + 1;
+              echo <<<HTML
+                <li class="page-item">
+                  <button class="page-link" data-bs-target="#carousel" data-bs-slide-to="{$page}">
+                    {$number}
+                  </button>
+                </li>
+              HTML;
+              $page += 1;
+            }
+          ?>
         <li class="page-item">
           <button class="page-link" data-bs-target="#carousel" data-bs-slide="next">
             Next
