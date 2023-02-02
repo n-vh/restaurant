@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $message = $_POST['message'];
 
   $query = array(
-    'first_name' => htmlspecialchars($first_name),
-    'last_name' => htmlspecialchars($last_name),
-    'subject' => htmlspecialchars($subject),
-    'message' => htmlspecialchars($message)
+    'first_name' => $first_name,
+    'last_name' => $last_name,
+    'subject' => $subject,
+    'message' => $message
   );
 
   $response = post_query("http://localhost/api/contact/send.php", $query);
