@@ -3,6 +3,14 @@ include("includes/query.php");
 
 $first_name = $last_name = $subject = $message = "";
 $successful = false;
+$form_options = array(
+  "Reservation request",
+  "Inquiry about private events",
+  "Suggestions for menu items",
+  "Questions about offers or events",
+  "General question or comment",
+  "Other"
+);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // @@@ SANITIZE INPUT @@@
@@ -75,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 class="serif">Do you have any question?</h1>
       </div>
       <section class="card col-10 col-md-8 col-lg-6">
-        <form class="row g-3 p-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="row g-3 p-3" action="<? echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
           <div class="col-md-6">
             <label for="form-first-name" class="form-label">First Name</label>
             <input id="form-first-name" class="form-control" type="text" name="first_name"
@@ -90,16 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="form-subject" class="form-label">Subject</label>
             <select id="form-subject" class="form-select" name="subject" required>
               <option selected disabled value="">Choose...</option>
-              <!-- @@@ LOOP OPTIONS @@@ -->
-              <option <? echo $subject === "Reservation request" ? "selected" : "" ?>>Reservation request</option>
-              <option <? echo $subject === "Inquiry about private events" ? "selected" : "" ?>>Inquiry about private
-                events</option>
-              <option <? echo $subject === "Suggestions for menu items" ? "selected" : "" ?>>Suggestions for menu items
-              </option>
-              <option <? echo $subject === "Questions about offers or events" ? "selected" : "" ?>>Questions about offers
-                or events</option>
-              <option <? echo $subject === "General question or comment" ? "selected" : "" ?>>General question or comment
-              </option>
+              <?php
+              foreach ($form_options as $option) {
+                $selected = $option === $subject ? "selected" : "";
+                echo "<option value='$option' $selected >$option</option>";
+              }
+              ?>
             </select>
           </div>
           <div class="col-md-12">
