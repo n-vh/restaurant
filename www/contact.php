@@ -2,6 +2,7 @@
 include("includes/query.php");
 
 $first_name = $last_name = $subject = $message = "";
+$first_name = $last_name = $email = $subject = $message = "";
 $successful = false;
 $form_options = array(
   "Reservation request",
@@ -16,12 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // @@@ SANITIZE INPUT @@@
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
+  $email = $_POST['email'];
   $subject = $_POST['subject'];
   $message = $_POST['message'];
 
   $query = array(
     'first_name' => $first_name,
     'last_name' => $last_name,
+    'email' => $email,
     'subject' => $subject,
     'message' => $message
   );
@@ -66,6 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="form-last-name" class="form-label">Last Name</label>
             <input id="form-last-name" class="form-control" type="text" name="last_name" value="<? echo $last_name ?>"
               required />
+          </div>
+          <div class="col-md-12">
+            <label for="form-email" class="form-label">Email</label>
+            <input id="form-email" class="form-control" type="email" name="email" value="<? echo $email ?>" required />
           </div>
           <div class="col-md-12">
             <label for="form-subject" class="form-label">Subject</label>
