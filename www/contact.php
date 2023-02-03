@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Contact – The Pet Plate</title>
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
   <?php include("components/navbar.php"); ?>
 

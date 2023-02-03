@@ -11,7 +11,7 @@
   <title>Home – The Pet Plate</title>
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
   <?php include("components/navbar.php"); ?>
 

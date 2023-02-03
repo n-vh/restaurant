@@ -6,7 +6,7 @@
   --accent-color: #f4a22b;
 }
 
-body {
+.background {
   background-image: url(images/pattern.svg);
   background-repeat: repeat;
   background-size: 1000%;
