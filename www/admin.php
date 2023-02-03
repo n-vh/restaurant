@@ -1,5 +1,8 @@
 <?php
+include("includes/query.php");
 session_start();
+
+$show_dashboard = false;
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +21,10 @@ session_start();
 <body class="d-flex flex-column vh-100">
   <?php
   include("components/navbar.php");
+
+  if (!$show_dashboard) {
+    include("components/login.php");
+  }
   ?>
 </body>
 
