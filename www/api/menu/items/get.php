@@ -8,5 +8,11 @@ if (isset($_GET["category"])) {
   $req->execute();
   $categories_items = $req->fetchAll(PDO::FETCH_ASSOC);
   echo json_encode($categories_items);
+} else {
+  echo json_encode(
+    array(
+      "error" => "missing parameters"
+    )
+  );
 }
 ?>

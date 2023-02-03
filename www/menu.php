@@ -2,7 +2,7 @@
 include("includes/database.php");
 include("includes/query.php");
 
-$request = get_query("http://localhost/api/menu/categories.php", array());
+$request = get_query("http://localhost/api/menu/categories/get.php", array());
 $categories = json_decode($request, true);
 ?>
 
@@ -31,7 +31,7 @@ $categories = json_decode($request, true);
       </div>
         <?php
           foreach($categories as $category) {
-            $items = get_query("http://localhost/api/menu/items.php", array("category" => $category["id"]));
+            $items = get_query("http://localhost/api/menu/items/get.php", array("category" => $category["id"]));
             $items = json_decode($items, true);
 
             echo <<<HTML

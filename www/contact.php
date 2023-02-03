@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     'message' => $message
   );
 
-  $response = post_query("http://localhost/api/contact/send.php", $query);
+  $response = post_query("http://localhost/api/messages/send.php", $query);
   $successful = $response == "successful";
 }
 ?>
