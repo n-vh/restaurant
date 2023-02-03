@@ -1,5 +1,5 @@
 <?php
-include('../../includes/database.php');
+include('../../../includes/database.php');
 
 $req = $conn->prepare("SELECT * FROM menu_categories");
 $req->execute();
