@@ -1,5 +1,5 @@
 <?php
-include('../../../includes/database.php');
+include_once('../../../includes/database.php');
 
 if (isset($_GET["category"])) {
   $category = $_GET["category"];

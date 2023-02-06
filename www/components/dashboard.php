@@ -30,5 +30,5 @@ if (isset($_GET["page"])) {
   </ul>
 </form>
 <div id="content" class="py-2 w-100">
-  <?php include("components/dashboard/$current_page.php"); ?>
+  <?php include_once("components/dashboard/$current_page.php"); ?>
 </div>

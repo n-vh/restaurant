@@ -1,5 +1,5 @@
 <?php
-include('../../includes/database.php');
+include_once('../../includes/database.php');
 
 $req = $conn->prepare("SELECT * FROM pictures");
 $req->execute();

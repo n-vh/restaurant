@@ -1,5 +1,5 @@
 <?php
-include('../../includes/database.php');
+include_once('../../includes/database.php');
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
   $params = array(

@@ -1,5 +1,5 @@
 <?php
-include("includes/query.php");
+include_once("includes/query.php");
 session_start();
 
 $show_dashboard = false;
@@ -30,12 +30,12 @@ include_once("components/header.php");
 
 <body class="d-flex flex-column vh-100">
   <?php
-  include("components/navbar.php");
+  include_once("components/navbar.php");
 
   if (!$show_dashboard) {
-    include("components/login.php");
+    include_once("components/login.php");
   } else {
-    include("components/dashboard.php");
+    include_once("components/dashboard.php");
   }
   ?>
 </body>

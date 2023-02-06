@@ -1,5 +1,5 @@
 <?php
-include('../../includes/database.php');
+include_once('../../includes/database.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
   $username = htmlspecialchars($_POST['username']);

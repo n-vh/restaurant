@@ -1,5 +1,5 @@
 <?php
-include("includes/query.php");
+include_once("includes/query.php");
 
 $first_name = $last_name = $subject = $message = "";
 $first_name = $last_name = $email = $subject = $message = "";
@@ -41,7 +41,7 @@ include_once("components/header.php");
 
 <body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
-  <?php include("components/navbar.php"); ?>
+  <?php include_once("components/navbar.php"); ?>
 
   <!-- contact -->
   <section class="container my-5">
@@ -100,7 +100,7 @@ include_once("components/header.php");
   </section>
 
   <!-- footer -->
-  <?php include("components/footer.php"); ?>
+  <?php include_once("components/footer.php"); ?>
 </body>
 
 </html>

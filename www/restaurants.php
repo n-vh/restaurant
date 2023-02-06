@@ -1,11 +1,11 @@
 <?php
 $head_title = "Restaurants";
-include("components/header.php");
+include_once("components/header.php");
 ?>
 
 <body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
-  <?php include("components/navbar.php"); ?>
+  <?php include_once("components/navbar.php"); ?>
 
   <!-- restaurants -->
   <section class="container">
@@ -95,7 +95,7 @@ include("components/header.php");
   </section>
 
   <!-- footer -->
-  <?php include("components/footer.php"); ?>
+  <?php include_once("components/footer.php"); ?>
 
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDHu_t8VjfZ8JUWdw2QPEV1rQrECGF_os&callback=initMap&v=weekly"

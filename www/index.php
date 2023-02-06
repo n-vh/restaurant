@@ -5,7 +5,7 @@ include_once("components/header.php");
 
 <body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
-  <?php include("components/navbar.php"); ?>
+  <?php include_once("components/navbar.php"); ?>
 
   <!-- jumbotron -->
   <section class="jumbotron d-flex align-items-center text-light">
@@ -75,7 +75,7 @@ include_once("components/header.php");
   </section>
 
   <!-- footer -->
-  <?php include("components/footer.php"); ?>
+  <?php include_once("components/footer.php"); ?>
 </body>
 
 </html>

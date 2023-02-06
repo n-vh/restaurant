@@ -1,6 +1,6 @@
 <?php
-include("includes/database.php");
-include("includes/query.php");
+include_once("includes/database.php");
+include_once("includes/query.php");
 
 $request = get_query("http://localhost/api/pictures/get.php", array());
 $pictures = json_decode($request, true);
@@ -13,7 +13,7 @@ include_once("components/header.php");
 
 <body class="d-flex flex-column vh-100 background">
   <!-- navbar -->
-  <?php include("components/navbar.php"); ?>
+  <?php include_once("components/navbar.php"); ?>
 
   <!-- pictures -->
   <section class="container my-5">
@@ -79,7 +79,7 @@ include_once("components/header.php");
   </section>
 
   <!-- footer -->
-  <?php include("components/footer.php"); ?>
+  <?php include_once("components/footer.php"); ?>
 </body>
 
 </html>
