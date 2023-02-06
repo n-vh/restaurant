@@ -1,6 +1,7 @@
 <?php
-include_once("includes/query.php");
 session_start();
+
+include_once("includes/query.php");
 
 $show_dashboard = false;
 

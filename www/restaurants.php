@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $head_title = "Restaurants";
 include_once("components/header.php");
 ?>

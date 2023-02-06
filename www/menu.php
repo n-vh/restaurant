@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("includes/database.php");
 include_once("includes/query.php");
 

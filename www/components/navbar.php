@@ -25,6 +25,10 @@ $pages = array(
 );
 ?>
 
+<?php
+include_once('components/gdpr.php');
+?>
+
 <nav class="navbar navbar-expand-lg sticky-top bg-white py-3">
   <div class="container">
     <img class="mx-2" src="assets/images/logo.svg" height="38" width="56" />

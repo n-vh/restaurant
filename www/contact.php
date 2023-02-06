@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("includes/query.php");
 
 $first_name = $last_name = $subject = $message = "";
