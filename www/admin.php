@@ -23,18 +23,10 @@ if (isset($_SESSION['admin'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/vendor/bootstrap.min.js"></script>
-  <title>Admin – The Pet Plate</title>
-</head>
+<?php
+$head_title = "Admin";
+include_once("components/header.php");
+?>
 
 <body class="d-flex flex-column vh-100">
   <?php
