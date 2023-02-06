@@ -15,24 +15,20 @@ if (isset($_GET["page"])) {
 }
 ?>
 
-<div class="d-md-flex align-items-stretch">
-  <div class="p-4 pt-5">
-    <div class="row nav nav-pills">
-      <form method="get">
-        <?php
-          foreach($pages as $key => $value) {
-            $active = $current_page == $key ? "active" : "";
-            echo <<<HTML
-            <li class="nav-item row">
-              <button type="submit" name="page" value="$key" class="nav-link text-center m-auto $active">$value</button>
-            </li>
-            HTML;
-          }
-        ?>
-      </form>
-    </div>
-  </div>
-  <div id="content" class="py-5 w-100">
-    <?php include("components/dashboard/$current_page.php"); ?>
-  </div>
+<form method="get">
+  <ul class="nav nav-tabs px-4">
+    <?php
+      foreach($pages as $key => $value) {
+        $active = $current_page == $key ? "active" : "";
+        echo <<<HTML
+        <li class="nav-item">
+          <button type="submit" name="page" value="$key" class="nav-link text-center m-auto $active">$value</button>
+        </li>
+        HTML;
+      }
+    ?>
+  </ul>
+</form>
+<div id="content" class="py-2 w-100">
+  <?php include("components/dashboard/$current_page.php"); ?>
 </div>
