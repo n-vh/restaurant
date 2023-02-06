@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     'password' => md5($_POST['password']),
   );
 
-  $data = post_query("http://localhost/api/admin/user.php", $params);
+  $data = post_query("http://localhost/api/admin/get.php", $params);
   $admin = json_decode($data, true);
 
   if ($admin && !isset($admin['error'])) {

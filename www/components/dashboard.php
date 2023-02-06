@@ -32,4 +32,7 @@ if (isset($_GET["page"])) {
       </form>
     </div>
   </div>
+  <div id="content" class="py-5 w-100">
+    <?php include("components/dashboard/$current_page.php"); ?>
+  </div>
 </div>
