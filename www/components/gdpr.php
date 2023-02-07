@@ -7,7 +7,7 @@ if (!isset($_SESSION["gdpr"])) {
   echo <<<HTML
     <form method="post">
       <div class="d-flex justify-content-center h-100 w-100 position-absolute bg-dark bg-opacity-75"
-        style="z-index:4000;height:100vh;width:100vw;overflow:hidden;">
+        style="z-index:4000">
         <div class="d-flex align-items-center align-self-center card px-5 py-3 text-center cookies">
           <img src="https://i.imgur.com/Tl8ZBUe.png" width="50">
           <span class="mt-2">We use necessary cookies for basic functionality.
@@ -20,7 +20,7 @@ if (!isset($_SESSION["gdpr"])) {
 
     <style>
       body {
-        overflow: auto;
+        overflow: hidden;
       }
     </style>
   HTML;

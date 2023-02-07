@@ -3,7 +3,6 @@ session_start();
 
 include_once("includes/query.php");
 
-$first_name = $last_name = $subject = $message = "";
 $first_name = $last_name = $email = $subject = $message = "";
 $successful = false;
 $form_options = array(
@@ -16,7 +15,6 @@ $form_options = array(
 );
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // @@@ SANITIZE INPUT @@@
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $email = $_POST['email'];
@@ -33,6 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $response = post_query("http://localhost/api/messages/send.php", $query);
   $successful = $response == "successful";
+
+  if ($successful) {
+    $first_name = $last_name = $email = $subject = $message = "";
+  }
 }
 ?>
 
