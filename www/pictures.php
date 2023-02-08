@@ -28,19 +28,24 @@ include_once("components/header.php");
           <?php
             for ($i = 0; $i < count($pictures); $i += 3) {
               $active = $i === 0 ? "active" : "";
+              
+              $left = $pictures[$i]['url'];
+              $top = array_key_exists($i+1, $pictures) ? $pictures[$i + 1]['url']: './assets/images/empty.png';
+              $bottom = array_key_exists($i+2, $pictures) ? $pictures[$i + 2]['url']: './assets/images/empty.png';
+
               echo <<<HTML
                 <div class="carousel-item $active">
                   <div class="row g-2 justify-content-center">
                     <div class="col-10 col-md-8">
-                      <img class="w-100" src="{$pictures[$i]['url']}" />
+                      <img class="w-100" src="{$left}" />
                     </div>
                     <div class="col-10 col-md-4">
                       <div class="row g-2">
                         <div class="col-6 col-md-12">
-                          <img class="w-100" src="{$pictures[$i + 1]['url']}" />
+                          <img class="w-100" src="{$top}" />
                         </div>
                         <div class="col-6 col-md-12">
-                          <img class="w-100" src="{$pictures[$i + 2]['url']}" />
+                          <img class="w-100" src="{$bottom}" />
                         </div>
                       </div>
                     </div>
