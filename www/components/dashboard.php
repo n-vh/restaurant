@@ -19,16 +19,16 @@ if (isset($_GET["page"])) {
   <ul class="nav nav-tabs px-4">
     <?php
       foreach($pages as $key => $value) {
-        $active = $current_page == $key ? "active" : "";
+        $active = $current_page == $key ? "active opacity-100" : "";
         echo <<<HTML
         <li class="nav-item">
-          <button type="submit" name="page" value="$key" class="nav-link text-center m-auto $active">$value</button>
+          <button type="submit" name="page" value="$key" class="nav-link text-dark m-auto opacity-75 $active">$value</button>
         </li>
         HTML;
       }
     ?>
   </ul>
 </form>
-<div id="content" class="py-2 w-100">
+<div id="content" class="w-100">
   <?php include_once("components/dashboard/$current_page.php"); ?>
 </div>
